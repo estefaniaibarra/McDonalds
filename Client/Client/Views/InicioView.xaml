@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:vm="clr-namespace:Client.ViewModel"
+             x:Class="Client.Views.InicioView">
+    <ContentPage.BindingContext>
+        <vm:EncuestaViewModel></vm:EncuestaViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Background="white">
+            <Image Source="mcdonaldsredondo" Margin="0,120,0,0"></Image>
+            <Label TextColor="Black" Text="Mc Donald's" FontFamily="Comic Sans MS" FontSize="25" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+            <Label TextColor="Black" Margin="40,80,40,80" FontSize="20" HorizontalTextAlignment="Center" FontAttributes="Italic">
+                Con el fin de recabar información de utilidad para la mejora de nuestros servicios, preparamos la siguiente encuesta para usted!</Label>
+            <Button  Command="{Binding IniciarCommand}" CornerRadius="40" Margin="140,0" BackgroundColor="White" ImageSource="next100">
+                <Button.GestureRecognizers>
+                    <TapGestureRecognizer></TapGestureRecognizer>
+                </Button.GestureRecognizers>
+            </Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

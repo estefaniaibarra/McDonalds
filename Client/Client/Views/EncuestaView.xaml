@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Client.ViewModel"
+             x:Class="Client.Views.EncuestaView"
+             NavigationPage.HasNavigationBar="False" >
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <StackLayout Padding="10,0"  HeightRequest="80"  Background="#DE3300" Orientation="Horizontal">
+                    <Label TextColor="#FFC107" Text="Mc Donald's"  HorizontalOptions="StartAndExpand" 
+                           FontAttributes="Bold"  VerticalOptions="Center" FontSize="26" FontFamily="Comic Sans MS"/>
+                    <Image Source="mcdonalds" Margin="15,15,0,15" ></Image>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Margin="15,20">
+                <StackLayout.Resources>
+                    <Style TargetType="Label">
+                        <Setter Property="FontSize" Value="18"/>
+                        <Setter Property="Margin" Value="15,30,15,0"/>
+                    </Style>
+                    <Style TargetType="ImageButton">
+                        <Setter Property="BackgroundColor" Value="Transparent"/>
+                    </Style>
+                    <Style TargetType="Button">
+                        <Style.Triggers>
+                            <DataTrigger TargetType="Button" Binding="{Binding Votado}" Value="True">
+                                <Setter Property="IsEnabled" Value="False"></Setter>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </StackLayout.Resources>
+                <!--Text="¿Estás conforme con la atención del personal?"-->
+                <Label Text="{Binding Pregunta.Pregunta1}" />
+                <FlexLayout Margin="10,-10">
+                    <FlexLayout.Resources>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="transparent"/>
+                        </Style>
+                    </FlexLayout.Resources>
+                    <Button ImageSource="carita196" Command="{Binding VotarCommand}" Text="{Binding Pregunta.Respuesta1}">
+                        <Button.CommandParameter>
+                            <x:Int32>1</x:Int32>
+                        </Button.CommandParameter>
+                    </Button>
+                    <Button ImageSource="carita296" Command="{Binding VotarCommand}" Text="{Binding Pregunta.Respuesta2}">
+                        <Button.CommandParameter>
+                            <x:Int32>2</x:Int32>
+                        </Button.CommandParameter>
+                    </Button>
+                    <Button ImageSource="carita396" Command="{Binding VotarCommand}" Text="{Binding Pregunta.Respuesta3}">
+                        <Button.CommandParameter>
+                            <x:Int32>3</x:Int32>
+                        </Button.CommandParameter>
+                    </Button>
+                    <Button ImageSource="carita496" Command="{Binding VotarCommand}" Text="{Binding Pregunta.Respuesta4}">
+                        <Button.CommandParameter>
+                            <x:Int32>3</x:Int32>
+                        </Button.CommandParameter>
+                    </Button>
+                    <Button ImageSource="carita596" Command="{Binding VotarCommand}" Text="{Binding Pregunta.Respuesta5}">
+                        <Button.CommandParameter>
+                            <x:Int32>3</x:Int32>
+                        </Button.CommandParameter>
+                    </Button>
+                </FlexLayout>
+                <Label Text="¿Nuestro local cumple con los estándares de higiene?" />
+                <FlexLayout Margin="10,-10">
+                    <ImageButton Source="carita196"/>
+                    <ImageButton Source="carita296"/>
+                    <ImageButton Source="carita396"/>
+                    <ImageButton Source="carita496"/>
+                    <ImageButton Source="carita596"/>
+                </FlexLayout>
+                <Label Text="Califique la calidad en general del servicio que recibió" />
+                <FlexLayout Margin="10,-10">
+                    <ImageButton Source="carita196"/>
+                    <ImageButton Source="carita296"/>
+                    <ImageButton Source="carita396"/>
+                    <ImageButton Source="carita496"/>
+                    <ImageButton Source="carita596"/>
+                </FlexLayout>
+            </StackLayout>
+            <Button Command="{Binding PantallaFinalCommand}" CornerRadius="20"  ImageSource="next90" BackgroundColor="Transparent" Margin="150,20"></Button>
+        </StackLayout>
+    </ContentPage.Content> 
+</ContentPage>
