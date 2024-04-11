@@ -31,58 +31,247 @@
                         </Style.Triggers>
                     </Style>
                 </StackLayout.Resources>
+                
                 <!--Text="¿Estás conforme con la atención del personal?"-->
-                <Label Text="{Binding Pregunta.Pregunta1}" />
-                <FlexLayout Margin="10,-10">
+                <Label Text="{Binding Pregunta1}" />
+                <FlexLayout Margin="10,-10" IsEnabled="{Binding Votado1Enabled}">
+                    <FlexLayout.Triggers>
+                        <DataTrigger TargetType="FlexLayout" Binding="{Binding Votado1Enabled}" Value="False">
+                            <Setter Property="Opacity" Value="0.5" />
+                        </DataTrigger>
+                    </FlexLayout.Triggers>
+
                     <FlexLayout.Resources>
                         <Style TargetType="Button">
                             <Setter Property="Background" Value="transparent"/>
                         </Style>
                     </FlexLayout.Resources>
-                    <Button ImageSource="carita196" Command="{Binding VotarCommand}" Text="{Binding Pregunta.Respuesta1}">
+                    <Button ImageSource="carita196" Command="{Binding VotarCommand}" Clicked="Button_Clicked" Text="{Binding Pregunta.Respuesta1}">
                         <Button.CommandParameter>
-                            <x:Int32>1</x:Int32>
+                            <x:Array Type="{x:Type x:Object}">
+                                <!--Id -->
+                                <x:Int32>1</x:Int32>
+                                <!-- Valor -->
+                                <x:Int32>5</x:Int32>
+
+                            </x:Array>
                         </Button.CommandParameter>
                     </Button>
-                    <Button ImageSource="carita296" Command="{Binding VotarCommand}" Text="{Binding Pregunta.Respuesta2}">
+
+
+                    <Button ImageSource="carita296" Command="{Binding VotarCommand}" Clicked="Button_Clicked" Text="{Binding Pregunta.Respuesta1}">
                         <Button.CommandParameter>
-                            <x:Int32>2</x:Int32>
+                            <x:Array Type="{x:Type x:Object}">
+                                <!--Id -->
+                                <x:Int32>1</x:Int32>
+                                <!-- Valor -->
+                                <x:Int32>4</x:Int32>
+
+                            </x:Array>
                         </Button.CommandParameter>
                     </Button>
-                    <Button ImageSource="carita396" Command="{Binding VotarCommand}" Text="{Binding Pregunta.Respuesta3}">
+
+                    <Button ImageSource="carita396" Command="{Binding VotarCommand}" Clicked="Button_Clicked" Text="{Binding Pregunta.Respuesta1}">
                         <Button.CommandParameter>
-                            <x:Int32>3</x:Int32>
+                            <x:Array Type="{x:Type x:Object}">
+                                <!--Id -->
+                                <x:Int32>1</x:Int32>
+                                <!-- Valor -->
+                                <x:Int32>3</x:Int32>
+
+                            </x:Array>
                         </Button.CommandParameter>
                     </Button>
-                    <Button ImageSource="carita496" Command="{Binding VotarCommand}" Text="{Binding Pregunta.Respuesta4}">
+
+                    <Button ImageSource="carita496" Command="{Binding VotarCommand}" Clicked="Button_Clicked" Text="{Binding Pregunta.Respuesta1}">
                         <Button.CommandParameter>
-                            <x:Int32>3</x:Int32>
+                            <x:Array Type="{x:Type x:Object}">
+                                <!--Id -->
+                                <x:Int32>1</x:Int32>
+                                <!-- Valor -->
+                                <x:Int32>2</x:Int32>
+
+                            </x:Array>
                         </Button.CommandParameter>
                     </Button>
-                    <Button ImageSource="carita596" Command="{Binding VotarCommand}" Text="{Binding Pregunta.Respuesta5}">
+
+                    <Button ImageSource="carita596" Command="{Binding VotarCommand}" Clicked="Button_Clicked" Text="{Binding Pregunta.Respuesta1}">
                         <Button.CommandParameter>
-                            <x:Int32>3</x:Int32>
+                            <x:Array Type="{x:Type x:Object}">
+                                <!--Id -->
+                                <x:Int32>1</x:Int32>
+                                <!-- Valor -->
+                                <x:Int32>1</x:Int32>
+
+                            </x:Array>
                         </Button.CommandParameter>
                     </Button>
+                    
                 </FlexLayout>
-                <Label Text="¿Nuestro local cumple con los estándares de higiene?" />
-                <FlexLayout Margin="10,-10">
-                    <ImageButton Source="carita196"/>
-                    <ImageButton Source="carita296"/>
-                    <ImageButton Source="carita396"/>
-                    <ImageButton Source="carita496"/>
-                    <ImageButton Source="carita596"/>
+
+                <Label Text="{Binding Pregunta2}" />
+                <FlexLayout Margin="10,-10" IsEnabled="{Binding Votado2Enabled}">
+                    <FlexLayout.Triggers>
+                        <DataTrigger TargetType="FlexLayout" Binding="{Binding Votado2Enabled}" Value="False">
+                            <Setter Property="Opacity" Value="0.5" />
+                        </DataTrigger>
+                    </FlexLayout.Triggers>
+
+                    <FlexLayout.Resources>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="transparent"/>
+                        </Style>
+                    </FlexLayout.Resources>
+                    <Button ImageSource="carita196" Command="{Binding VotarCommand}" Clicked="Button_Clicked" Text="{Binding Pregunta.Respuesta1}">
+                        <Button.CommandParameter>
+                            <x:Array Type="{x:Type x:Object}">
+                                <!--Id -->
+                                <x:Int32>2</x:Int32>
+                                <!-- Valor -->
+                                <x:Int32>5</x:Int32>
+
+                            </x:Array>
+                        </Button.CommandParameter>
+                    </Button>
+
+
+                    <Button ImageSource="carita296" Command="{Binding VotarCommand}" Clicked="Button_Clicked" Text="{Binding Pregunta.Respuesta1}">
+                        <Button.CommandParameter>
+                            <x:Array Type="{x:Type x:Object}">
+                                <!--Id -->
+                                <x:Int32>2</x:Int32>
+                                <!-- Valor -->
+                                <x:Int32>4</x:Int32>
+
+                            </x:Array>
+                        </Button.CommandParameter>
+                    </Button>
+
+                    <Button ImageSource="carita396" Command="{Binding VotarCommand}" Clicked="Button_Clicked" Text="{Binding Pregunta.Respuesta1}">
+                        <Button.CommandParameter>
+                            <x:Array Type="{x:Type x:Object}">
+                                <!--Id -->
+                                <x:Int32>2</x:Int32>
+                                <!-- Valor -->
+                                <x:Int32>3</x:Int32>
+
+                            </x:Array>
+                        </Button.CommandParameter>
+                    </Button>
+
+                    <Button ImageSource="carita496" Command="{Binding VotarCommand}" Clicked="Button_Clicked" Text="{Binding Pregunta.Respuesta1}">
+                        <Button.CommandParameter>
+                            <x:Array Type="{x:Type x:Object}">
+                                <!--Id -->
+                                <x:Int32>2</x:Int32>
+                                <!-- Valor -->
+                                <x:Int32>2</x:Int32>
+
+                            </x:Array>
+                        </Button.CommandParameter>
+                    </Button>
+
+                    <Button ImageSource="carita596" Command="{Binding VotarCommand}" Clicked="Button_Clicked" Text="{Binding Pregunta.Respuesta1}">
+                        <Button.CommandParameter>
+                            <x:Array Type="{x:Type x:Object}">
+                                <!--Id -->
+                                <x:Int32>2</x:Int32>
+                                <!-- Valor -->
+                                <x:Int32>1</x:Int32>
+
+                            </x:Array>
+                        </Button.CommandParameter>
+                    </Button>
+
                 </FlexLayout>
-                <Label Text="Califique la calidad en general del servicio que recibió" />
-                <FlexLayout Margin="10,-10">
-                    <ImageButton Source="carita196"/>
-                    <ImageButton Source="carita296"/>
-                    <ImageButton Source="carita396"/>
-                    <ImageButton Source="carita496"/>
-                    <ImageButton Source="carita596"/>
+
+
+
+                <Label Text="{Binding Pregunta3}" />
+                <FlexLayout Margin="10,-10" IsEnabled="{Binding Votado3Enabled}">
+                    <FlexLayout.Triggers>
+                        <DataTrigger TargetType="FlexLayout" Binding="{Binding Votado3Enabled}" Value="False">
+                            <Setter Property="Opacity" Value="0.5" />
+                        </DataTrigger>
+                    </FlexLayout.Triggers>
+
+                    <FlexLayout.Resources>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="transparent"/>
+                        </Style>
+                    </FlexLayout.Resources>
+                    <Button ImageSource="carita196" Command="{Binding VotarCommand}" Clicked="Button_Clicked" Text="{Binding Pregunta.Respuesta1}">
+                        <Button.CommandParameter>
+                            <x:Array Type="{x:Type x:Object}">
+                                <!--Id -->
+                                <x:Int32>3</x:Int32>
+                                <!-- Valor -->
+                                <x:Int32>5</x:Int32>
+
+                            </x:Array>
+                        </Button.CommandParameter>
+                    </Button>
+
+
+                    <Button ImageSource="carita296" Command="{Binding VotarCommand}" Clicked="Button_Clicked" Text="{Binding Pregunta.Respuesta1}">
+                        <Button.CommandParameter>
+                            <x:Array Type="{x:Type x:Object}">
+                                <!--Id -->
+                                <x:Int32>3</x:Int32>
+                                <!-- Valor -->
+                                <x:Int32>4</x:Int32>
+
+                            </x:Array>
+                        </Button.CommandParameter>
+                    </Button>
+
+                    <Button ImageSource="carita396" Command="{Binding VotarCommand}" Clicked="Button_Clicked" Text="{Binding Pregunta.Respuesta1}">
+                        <Button.CommandParameter>
+                            <x:Array Type="{x:Type x:Object}">
+                                <!--Id -->
+                                <x:Int32>3</x:Int32>
+                                <!-- Valor -->
+                                <x:Int32>3</x:Int32>
+
+                            </x:Array>
+                        </Button.CommandParameter>
+                    </Button>
+
+                    <Button ImageSource="carita496" Command="{Binding VotarCommand}" Clicked="Button_Clicked" Text="{Binding Pregunta.Respuesta1}">
+                        <Button.CommandParameter>
+                            <x:Array Type="{x:Type x:Object}">
+                                <!--Id -->
+                                <x:Int32>3</x:Int32>
+                                <!-- Valor -->
+                                <x:Int32>2</x:Int32>
+
+                            </x:Array>
+                        </Button.CommandParameter>
+                    </Button>
+
+                    <Button ImageSource="carita596" Command="{Binding VotarCommand}" Clicked="Button_Clicked" Text="{Binding Pregunta.Respuesta1}">
+                        <Button.CommandParameter>
+                            <x:Array Type="{x:Type x:Object}">
+                                <!--Id -->
+                                <x:Int32>3</x:Int32>
+                                <!-- Valor -->
+                                <x:Int32>1</x:Int32>
+
+                            </x:Array>
+                        </Button.CommandParameter>
+                    </Button>
+
                 </FlexLayout>
+
             </StackLayout>
-            <Button Command="{Binding PantallaFinalCommand}" CornerRadius="20"  ImageSource="next90" BackgroundColor="Transparent" Margin="150,20"></Button>
+
+            <Button IsEnabled="{Binding VotadoEnabled}" Command="{Binding PantallaFinalCommand}" CornerRadius="20"  ImageSource="next90" BackgroundColor="Transparent" Margin="150,20">
+                <Button.Triggers>
+                    <DataTrigger TargetType="Button" Binding="{Binding VotadoEnabled}" Value="False">
+                        <Setter Property="Opacity" Value="0.5" />
+                    </DataTrigger>
+                </Button.Triggers>
+            </Button>
         </StackLayout>
     </ContentPage.Content> 
 </ContentPage>

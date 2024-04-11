@@ -2,10 +2,14 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:vm="clr-namespace:Servidor.ViewModel"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Servidor.Views"
         mc:Ignorable="d"
         Title="ResultadosView" Height="450" Width="800">
+    <Window.DataContext>
+        <vm:EncuestaViewModel></vm:EncuestaViewModel>
+    </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height=".2*"/>
@@ -42,9 +46,12 @@
                         <ColumnDefinition Width=".57*"/>
                         <ColumnDefinition Width=".43*"/>
                     </Grid.ColumnDefinitions>
-                    <ProgressBar Grid.Column="1" Grid.Row="0"></ProgressBar>
-                    <ProgressBar Grid.Column="1" Grid.Row="2"></ProgressBar>
-                    <ProgressBar Grid.Column="1" Grid.Row="4"></ProgressBar>
+                    <ProgressBar Grid.Column="1" Grid.Row="0" Maximum="100" Value="{Binding PorcentajeSatisfacion1, Mode=OneWay}" />
+                    <TextBlock Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding PorcentajeSatisfacion1, StringFormat={}{0:0}%}" />
+                    <ProgressBar Grid.Column="1" Grid.Row="2" Maximum="100" Value="{Binding PorcentajeSatisfacion2, Mode=OneWay}"></ProgressBar>
+                    <TextBlock Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding PorcentajeSatisfacion2, StringFormat={}{0:0}%}" />
+                    <ProgressBar Grid.Column="1" Grid.Row="4" Maximum="100" Value="{Binding PorcentajeSatisfacion3, Mode=OneWay}"></ProgressBar>
+                    <TextBlock Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding PorcentajeSatisfacion3, StringFormat={}{0:0}%}" />
 
                     <TextBlock Grid.Row="0" VerticalAlignment="Center" Text="¿Estás conforme con la atención del personal?"></TextBlock>
                     <TextBlock Text="¿Nuestro local cumple con los estándares de higiene?" Grid.Row="2" VerticalAlignment="Center" ></TextBlock>
